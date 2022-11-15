@@ -1,0 +1,27 @@
+<html>
+<head>
+{% if title %}
+<title>{{ title }} - Share File</title> {% else %}
+<title>Welcome to Share File</title> {% endif %}
+<link rel="stylesheet" type="text/css" href="static/style.css" />
+<h1>Welcome to the file sharing app
+	{% if current_user.is_anonymous %}
+<button><a href="{{ url_for('login') }}">Login</a></button> {% else %}
+<button><a href="{{ url_for('logout') }}">Logout</a></button> {% endif %}
+</h1>
+</head>
+<body>
+	<center>
+		<div id="menu">
+			<ul>
+				<li><a href="/">File</a></li>
+				<li><a href="/tag">Tag</a></li>
+				<li><a href="/user">User</a></li>
+				<!-- <li><a href="/version">Version</a></li> -->
+			</ul>
+		</div>
+		<hr>
+	</center>
+	{% block content %}{% endblock %}
+</body>
+</html>

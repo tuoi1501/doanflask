@@ -1,0 +1,75 @@
+{% import "bootstrap/utils.html" as utils %} {% extends "base1.html" %}
+{% block content %}
+<h2 style="text-align: center;">List File</h2>
+{% if files %}
+<hr class="intro-divider">
+<div class="center">
+	<table class="table table-striped table-bordered"
+		style="margin-left: 25%; margin-right: 25%;">
+		<thead>
+			<tr>
+				<th width="5%">ID</th>
+				<th width="15%">Name</th>
+				<th width="15%">File</th>
+				<th width="10%">User</th>
+				<th width="5%">Type</th>
+				<th width="5%"></th>
+				<th width="5%"></th>
+				<th width="5%"></th>
+				<th width="5%"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for file in files %}
+			<tr>
+				<td>{{ file.id }}</td>
+				<td>{{ file.name }}</td>
+				<td>{{ file.file }}</td>
+				<td>{{ file.user_id }}</td>
+				<td>{{ file.type_id }}</td>
+				<td>
+					<button style="width: 70px; height: 30px;"
+						class="btn btn-default btn-lg" style="text-decoration: none;">
+						<a href=""> <i class="fa fa-pencil"></i> Edit
+						</a>
+					</button>
+				</td>
+				<td>
+					<button style="width: 70px; height: 30px;">
+						<a href=""> <i class="fa fa-trash"></i> Delete
+						</a>
+					</button>
+				</td>
+				<td>
+					<button style="width: 70px; height: 30px;">
+						<a href=""> <i class="fa fa-trash"></i> Share
+						</a>
+					</button>
+				</td>
+				<td>
+					<button style="width: 70px; height: 30px;">
+						<a href="/file/dowload/{{file.file}}"> <i class="fa fa-trash"></i>
+							Download
+						</a>
+					</button>
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>
+<div style="text-align: center">
+	{% else %}
+	<div style="text-align: center">
+		<h3>No files have been added.</h3>
+		<hr class="intro-divider">
+		{% endif %}
+		<button style="width: 130px; height: 30px;">
+			<a href="{{ url_for('submit_file') }}"> <i class="fa fa-plus"></i>
+				Add File
+			</a>
+		</button>
+	</div>
+</div>
+
+{% endblock %}

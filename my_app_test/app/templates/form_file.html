@@ -1,0 +1,131 @@
+<html>
+<head>
+{% if title %}
+<title>{{ title }} - Share File</title> {% else %}
+<title>Welcome to Share File</title> {% endif %}
+<h1>Welcome to the file sharing app</h1>
+<style>
+#menu {
+	display: flex;
+	justify-content: center;
+	border: 1px solid #000;
+	height: 80px;
+	background-color: #888888;
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 0px;
+	margin-left: 25%;
+    margin-right: 25%; 
+    box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+h1 {
+	text-align: center; color: #669900; font-family: Helvetica, sans-serif;
+	font-size: 24px; text-transform: uppercase; padding-top: 30px;
+	padding-bottom: 30px; box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+h2 {
+	color: #669900; font-family: Helvetica, sans-serif;
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+hr {
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+ul {
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	padding-inline-start: 0px;
+}
+
+li {
+	list-style-type: none;
+	display: inline;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+#menu ul li a:link {
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#menu ul li a:visited {
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#menu ul li a:hover {
+	color: #FFF;
+	background-color: #81B101;
+	-webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	-moz-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+
+input, select {
+	width: 500px;
+	height: 30px;
+}
+
+input[type="submit" i] {
+	width: 80px;
+}
+
+input[type="submit" i]:hover {
+	background-color: #81B101;
+}
+</style>
+</head>
+<body>
+	<center>
+		<div id="menu">
+			<ul>
+				<li><a href="/">File</a></li>
+				<li><a href="/tag">Tag</a></li>
+				<li><a href="/user">User</a></li>
+				<!-- <li><a href="/version">Version</a></li> -->
+			</ul>
+		</div>
+		<hr>
+	</center>
+	<h2 style="text-align: center;">Form File</h2>
+	<center>
+		<form action="" method="POST" enctype="multipart/form-data">
+			<table>
+				<tr>
+					<td>{{ form.name.label }}</td>
+					<td>{{ form.name(size=32) }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.user_id.label }}</td>
+					<td>{{ form.user_id }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.type_id.label }}</td>
+					<td>{{ form.type_id }}</td>
+				</tr>
+				<tr>
+					<td>{{ form.version.label }}</td>
+					<td>{{ form.version }}</td>
+				</tr>
+			</table>
+			<p>
+				{{ form.file.label }}<br> {{ form.file }}
+			</p>
+			<p>{{ form.submit() }}</p>
+		</form>
+	</center>
+</body>
+</html>

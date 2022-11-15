@@ -1,0 +1,94 @@
+#menu {
+	display: flex;
+	justify-content: center;
+	border: 1px solid #000;
+	height: 80px;
+	background-color: #888888;
+	font-family: Helvetica, sans-serif;
+	font-size: 24px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 0px;
+	margin-left: 25%;
+    margin-right: 25%; 
+    box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+/* 
+#menu ul
+
+{
+
+  margin-top:  20px;
+	list-style: none;
+}
+ */
+h1 {
+	text-align: center; color: #669900; font-family: Helvetica, sans-serif;
+	font-size: 24px; text-transform: uppercase; padding-top: 30px;
+	padding-bottom: 30px; box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+h2 {
+	color: #669900; font-family: Helvetica, sans-serif;
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+hr {
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+
+ul {
+	list-style: none;
+	display: flex;
+	justify-content: space-evenly;
+	padding-left: 0px;
+}
+
+#menu ul li {
+	list-style-type: none;
+	display: inline;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+#menu ul li a:link {
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+#menu ul li a:visited {
+	color: #FFF;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+#menu ul li a:hover {
+	color: #FFF;
+	background-color: #81B101;
+	-webkit-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	-moz-box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+	box-shadow: 0px 4px 5px rgba(50, 50, 50, 0.93);
+}
+
+td, th {
+	border: 1px solid black;
+	padding: 16px;
+}
+thead {
+	background-color: #669900;
+	color: #FFF;
+	text-transform: uppercase;
+}
+table {
+	margin-left: 25%;
+    margin-right: 25%; 
+}
+
+
